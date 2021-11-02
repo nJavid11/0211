@@ -11,7 +11,9 @@ namespace Task1._02
             //int[] arr= {1,2,3,4};   //task1           
             //Console.WriteLine("Sum of the array = "+SumOfAll(arr));
 
-            //task2
+            //int[] arr = { 4, 3, 2, 4, 2, 3, 5, 3, 10, 55 };   //task2
+            //int count = DuplicatedElems(arr);
+            //Console.WriteLine("Number of duplicate elements - " + count);
 
             //int[] arr = { 1, 2, 3, 4 };     //task3
             //Console.WriteLine("The result is " + isEqual(arr,12));
@@ -74,7 +76,8 @@ namespace Task1._02
 
             //string str = "This  is  Code   Academy";        //task4
             //Console.WriteLine("Total number of words in the string is : " + CountWords(str));
-
+            
+            
 
         }
 
@@ -88,7 +91,41 @@ namespace Task1._02
             return sum;
         }
 
-        //2
+        public static int DuplicatedElems(int[] arr)
+        {
+            int count = 0;
+            int n = 0;
+
+            Array.Sort(arr);
+
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+
+                if (arr[i] == arr[i - 1])
+                {
+
+                    n++;
+                }
+                else
+                {
+                    if (n > 0)
+                    {
+                        count += n + 1;
+
+                    }
+                    n = 0;
+                }
+                
+            }
+            if (n > 0)
+            {
+                count += n + 1;
+
+            }
+
+            return count;
+        }
 
         public static bool isEqual(int[] arr, int num)
         {
