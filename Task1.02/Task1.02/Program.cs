@@ -107,6 +107,7 @@ namespace Task1._02
             Array.Copy(arr1, arr, arr1.Length);
             Array.Copy(arr2, 0, arr, arr1.Length, arr2.Length);
             Array.Sort(arr);
+            Array.Reverse(arr);
 
             return arr;
         }
@@ -161,7 +162,7 @@ namespace Task1._02
 
             for (int i = str.Length - 1; i >= 0; i--)
             {
-                reversed = reversed + ch[i];
+                reversed = reversed + ch[i]+" ";
             }
             return reversed;
         }
